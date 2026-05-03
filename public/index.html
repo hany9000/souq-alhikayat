@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>سوق عكاظ - بهو الشات</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="/css/style.css">
+    <meta name="player-auth" content="false">
+    <meta name="player-id" content="">
+    <meta name="player-username" content="">
+</head>
+<body>
+    <div id="authStatus" style="display: none;"></div>
+    <div class="animated-bg">
+        <div class="floating-particle"></div>
+        <div class="floating-particle"></div>
+        <div class="floating-particle"></div>
+        <div class="floating-particle"></div>
+        <div class="floating-particle"></div>
+    </div>
+
+    <div class="main-container">
+        <header class="luxury-header">
+            <div class="header-decoration top"></div>
+            <div class="logo-section">
+                <div class="logo-icon">
+                    <i class="fas fa-comments"></i>
+                </div>
+                <h1 class="main-title">
+                    <span class="title-word">سوق عكاظ</span>
+                    <span class="title-separator">✦</span>
+                    <span class="title-word">بهو الشات</span>
+                </h1>
+                <p class="subtitle">حيث تلتقي الحكايات</p>
+            </div>
+            <div class="header-decoration bottom"></div>
+        </header>
+
+        <main class="content-area">
+            <section class="chat-section" id="publicChatSection">
+                <div class="section-header">
+                    <div class="ornate-button primary">
+                        <i class="fas fa-users"></i>
+                        <span>الشات العام</span>
+                    </div>
+                    <div class="online-counter">
+                        <i class="fas fa-circle online-dot"></i>
+                        <span id="onlineCount">0 متصل</span>
+                    </div>
+                </div>
+
+                <div class="messages-container" id="messagesContainer">
+                    <div class="welcome-message">
+                        <div class="welcome-icon">
+                            <i class="fas fa-sparkles"></i>
+                        </div>
+                        <h3>أهلاً بك في سوق عكاظ</h3>
+                        <p>ابدأ المحادثة وشارك الحكايات</p>
+                    </div>
+                </div>
+
+                <div class="input-area">
+                    <div class="input-wrapper">
+                        <input type="text"
+                               id="messageInput"
+                               class="luxury-input"
+                               placeholder="اكتب رسالتك هنا..."
+                               autocomplete="off">
+                        <button class="send-button" id="sendButton">
+                            <i class="fas fa-paper-plane"></i>
+                            <span>إرسال</span>
+                        </button>
+                    </div>
+                </div>
+            </section>
+
+            <aside class="side-panel">
+                <div class="panel-box">
+                    <div class="panel-header">
+                        <i class="fas fa-door-open"></i>
+                        <span>الغرف الخاصة</span>
+                    </div>
+                    <div class="panel-content">
+                        <button class="ornate-button secondary full-width" id="createRoomBtn">
+                            <i class="fas fa-plus"></i>
+                            <span>أنشئ غرفة خاصة</span>
+                            <span class="badge">1000 سعة</span>
+                        </button>
+                        <div class="rooms-list" id="roomsList">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="panel-box">
+                    <div class="panel-header">
+                        <i class="fas fa-user-friends"></i>
+                        <span>الأصدقاء</span>
+                    </div>
+                    <div class="panel-content">
+                        <div class="friends-list" id="friendsList">
+                            <div class="empty-state">
+                                <i class="fas fa-user-plus"></i>
+                                <span>لا يوجد أصدقاء بعد</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="panel-box">
+                    <div class="panel-header">
+                        <i class="fas fa-phone-volume"></i>
+                        <span>المكالمات الصوتية</span>
+                    </div>
+                    <div class="panel-content">
+                        <button class="ornate-button accent full-width" id="startCallBtn">
+                            <i class="fas fa-microphone"></i>
+                            <span>بدء مكالمة صوتية</span>
+                        </button>
+                        <div class="call-status" id="callStatus">
+                            <span>لم تبدأ مكالمة بعد</span>
+                        </div>
+                    </div>
+                </div>
+            </aside>
+        </main>
+
+        <div class="modal-overlay" id="loginModal">
+            <div class="luxury-modal">
+                <div class="modal-header">
+                    <h2>تسجيل الدخول</h2>
+                    <button class="close-modal" id="closeLoginModal">
+                        <i class="fas fa-times"></i>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <!-- نموذج للاعبين الجدد -->
+                    <div id="guestLoginForm">
+                        <div class="input-group">
+                            <label>اسم المستخدم</label>
+                            <input type="text" id="usernameInput" class="luxury-input" placeholder="أدخل اسمك">
+                        </div>
+                        <button class="ornate-button primary full-width" id="loginButton">
+                            <i class="fas fa-sign-in-alt"></i>
+                            <span>دخول كضيف</span>
+                        </button>
+                        <div class="divider">
+                            <span>أو</span>
+                        </div>
+                        <button class="ornate-button secondary full-width" id="gameLoginButton">
+                            <i class="fas fa-gamepad"></i>
+                            <span>دخول بحساب اللعبة</span>
+                        </button>
+                    </div>
+                    
+                    <!-- رسالة للاعبين المصادقين -->
+                    <div id="authLoading" style="display: none; text-align: center; padding: 2rem;">
+                        <i class="fas fa-spinner fa-spin" style="font-size: 3rem; color: var(--gold);"></i>
+                        <p style="margin-top: 1rem;">جاري التحقق...</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="notifications-container" id="notificationsContainer"></div>
+
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="/js/app.js"></script>
+</body>
+</html>
